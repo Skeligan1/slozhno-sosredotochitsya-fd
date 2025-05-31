@@ -1,5 +1,98 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+
+
+
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  color: var(--main-text-color);
+  line-height: var(--main-line-height);
+
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
+/* ------------///////-----------ШАПКА_Шаг_3-----------\\\\\\---------- */
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  align-items: center;
+  justify-items: end;
+  padding: var(--main-padding);
+}
+/* ----размер экарана---- */
+.decorated-zone {
+  height: 100vh;
+  min-height: 668px;
+  position: relative;
+}
+/* ----декоративные уголки---- */
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+
+  inset-inline-start: var(--main-padding);
+  inset-block-end: var(--main-padding);
+
+  inline-size: 25px;
+  block-size: 25px;
+
+  border-block-end: 1px solid var(--button-color);
+  border-inline-start: 1px solid var(--button-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+
+  inset-inline-end: var(--main-padding);
+  inset-block-start: var(--main-padding);
+
+  inline-size: 25px;
+  block-size: 25px;
+
+  border-block-start: 1px solid var(--button-color);
+  border-inline-end: 1px solid var(--button-color);
+}
+/* ----позицирнирование меню для моб устройств---- */
+.header__theme-menu {
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* ----эфекты для меню при наведении, фокусе и активном режиме---- */
+.header__theme-menu-button {
+  color: var(--button-color);
+  padding: 1.5px 13px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-hover-border);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--button-color);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--button-color);
+  pointer-events: none;
+}
+/* ----Заголовок страницы---- */

@@ -2,35 +2,30 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
-
 :root {
-
-/* Неизменное */
-  --main-font: 'IBM Plex Mono', monospace;
-  --main-font-size: 18px;
-  --main-line-height: 130%;
-  --header-articles-gap: 20px;
-  --articles-gap: 20px;
-  --shadow-color: #ff0070;
-  --header-weight: 700;
+  /* ---------Переменные общие--------- */
+  --page-font: 'IBM Plex Mono', monospace;
+  --page-font-size: 18px;
   --text-weight: 400;
-
-  /* Связано с размером */
-  --main-padding: 10px;  /* 20px при > 375  */
-  --main-content-vertical-padding: 40px;  /* 60px при > 375  */
-  --sections-gap: 50px;  /* 80px при > 375  */
-
-  /* Связано с цветом */
-  --main-text-color: #f1b2ce;  /* #353430 */
-  --bg-color: #000028;  /* #fff1f7 */
-  --main-header-color: #db00ff; /* #ffc2e6 */
-  --button-color: #ff0070;  /* #353430 */
-  --button-hover-border: rgb(255, 0, 112, 0.5); /* #32312d66 */
-  --section-header-color: #ff0070;  /* #353430 */
-  --article-header-color: #000028;  /* #353430 */
-  --article-bg-color: #ff0070;  /* #ff8dcb */
-  --link-shadow-color: #ff0070; /* #ff8dcb */
-  --bg-image: url("../images/cover-image-dark.png");
   --visible: visible;
+  --header-weight: 700;
+  --line-height: 130%;
+  --accent-color: #ff0070;
+  --section-gap: 20px;
+  --main-gap: 20px;
 
+  /* --------Переменные связанные с цветом------------ */
+  --title-color: #ff0070;  /* замена на #353430 */
+  --border-hover: rgb(255, 0, 112, 0.5); /* замена на #32312d66 */
+  --color-article: #000028;  /* замена на #353430 */
+  --page-color: #ff0070;  /* замена на #353430 */
+  --head-text-background-color: #ff0070;  /* замена на #ff8dcb */
+  --header-footer-color: #db00ff; /* замена на #ffc2e6 */
+  --shadow-text-link-color: #ff0070; /* замена на #ff8dcb */
+  --hover-color: #f1b2ce;  /* замена на #353430 */
+  --background-color: #000028;  /* замена на #fff1f7 */
+  --background-image: url("../images/cover-image-dark.png");
+  --main-content-vertical-padding: 40px;
+  --sections-gap: 50px;
+  --section-padding: 10px;
 }

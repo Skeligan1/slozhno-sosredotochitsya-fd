@@ -9,6 +9,17 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --title-color: #ff0070;  /* замена на #353430 */
+  --border-hover: rgb(255, 0, 112, 0.5); /* замена на #32312d66 */
+  --color-article: #000028;  /* замена на #353430 */
+  --page-color: #ff0070;  /* замена на #353430 */
+  --head-text-background-color: #ff0070;  /* замена на #ff8dcb */
+  --header-footer-color: #db00ff; /* замена на #ffc2e6 */
+  --shadow-text-link-color: #ff0070; /* замена на #ff8dcb */
+  --hover-color: #f1b2ce;  /* замена на #353430 */
+  --background-color: #000028;  /* замена на #fff1f7 */
+  --background-image: url("../images/cover-image-dark.png");
+  --visible: visible;
 }
 
 .theme-dark .page {

@@ -1,64 +1,51 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
-
-
-
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  margin: 0 auto;
-  background-color: var(--bg-color);
-  font-family: var(--main-font);
-  font-size: var(--main-font-size);
-  color: var(--main-text-color);
-  line-height: var(--main-line-height);
-
-  background-image: var(--bg-image);
-  background-repeat: no-repeat;
+  background-image: var(--background-image);
+  color: var(--hover-color);
+  font-size: var(--page-font-size);
+  line-height: var(--line-height);
+  font-family: var(--page-font);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 /* ------------///////-----------ШАПКА_Шаг_3-----------\\\\\\---------- */
 .header {
+  padding: var(--section-padding);
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  align-items: center;
   justify-items: end;
-  padding: var(--main-padding);
+  align-items: center;
 }
 /* ----размер экарана---- */
 .decorated-zone {
   height: 100vh;
-  min-height: 668px;
   position: relative;
+  min-height: 668px;
 }
 /* ----декоративные уголки---- */
-.decorated-zone::before {
-  content: "";
-  position: absolute;
-
-  inset-inline-start: var(--main-padding);
-  inset-block-end: var(--main-padding);
-
-  inline-size: 25px;
-  block-size: 25px;
-
-  border-block-end: 1px solid var(--button-color);
-  border-inline-start: 1px solid var(--button-color);
-}
-
 .decorated-zone::after {
   content: "";
+  border-block-start: 1px solid var(--page-color);
+  border-inline-end: 1px solid var(--page-color);
+  inset-inline-end: var(--section-padding);
+  inset-block-start: var(--section-padding);
+  block-size: 25px;
+  inline-size: 25px;
   position: absolute;
+}
 
-  inset-inline-end: var(--main-padding);
-  inset-block-start: var(--main-padding);
-
+.decorated-zone::before {
+  content: "";
+  border-block-end: 1px solid var(--page-color);
+  border-inline-start: 1px solid var(--page-color);
+  inset-inline-start: var(--section-padding);
+  inset-block-end: var(--section-padding);
   inline-size: 25px;
   block-size: 25px;
-
-  border-block-start: 1px solid var(--button-color);
-  border-inline-end: 1px solid var(--button-color);
+  position: absolute;
 }
 /* ----позицирнирование меню для моб устройств---- */
 .header__theme-menu {
@@ -67,32 +54,224 @@
 
 .header__theme-menu-list {
   display: flex;
-  flex-direction: column;
   gap: 10px;
+  flex-direction: column;
 }
 /* ----эфекты для меню при наведении, фокусе и активном режиме---- */
 .header__theme-menu-button {
-  color: var(--button-color);
-  padding: 1.5px 13px;
-  border: none;
+  color: var(--page-color);
   background-color: transparent;
   cursor: pointer;
+  padding: 1.2px 13px;
+  border: none;
 }
 
-.header__theme-menu-button:hover {
-  outline: 1px solid var(--button-hover-border);
+.header__theme-menu-button_active {
+  outline: 1px solid var(--page-color);
+  pointer-events: none;
 }
 
 .header__theme-menu-button:focus {
   outline: none;
 }
 
-.header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--button-color);
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--border-hover);
 }
 
-.header__theme-menu-button_active {
-  outline: 1px solid var(--button-color);
-  pointer-events: none;
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--page-color);
 }
 /* ----Заголовок страницы---- */
+.focus {
+  color: var(--header-footer-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  font-weight: var(--header-weight);
+}
+
+.header__title {
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+/* ----Индикатор элемента RES и его позиционирование----- */
+.rec__span::after {
+  content: "";
+  visibility: var(--visible);
+  box-shadow: 0px 0px 4px 4px var(--page-color);
+  color: var(--page-color);
+  background-color: var(--page-color);
+  border-radius: 100%;
+  block-size: 5px;
+  inline-size: 5px;
+  inset-block-start: 10px;
+  inset-inline-end: -19px;
+  position: absolute;
+}
+/* ----Элемент RES и его позиционирование----- */
+.rec__span {
+  inset-inline-end: calc(var(--section-padding) + 30px);
+  inset-block-start: var(--section-padding);
+  color: var(--page-color);
+  visibility: var(--visible);
+  text-transform: uppercase;
+  position: absolute;
+}
+/* ----Обзац позиционирование---- */
+.head__p {
+  background-color: var(--head-text-background-color);
+  font-weight: var(--header-weight);
+  color: black;
+  width: 100%;
+  justify-self: end;
+  align-self: center;
+}
+/* --------///////------Основной контент-------\\\\\\\\----- */
+.container {
+  display: grid;
+  padding: var(--main-content-vertical-padding) var(--section-padding);
+  gap: var(--sections-gap);
+}
+/* ----Сексии ---- */
+.section {
+  display: grid;
+  gap: var(--main-gap);
+  grid-auto-flow: row;
+}
+/* ---- Задали цвет и размер тексту ---- */
+.title__head {
+  font-weight: var(--header-weight);
+  line-height: var(--line-height);
+  font-size: var(--page-font-size);
+  color: var(--title-color);
+}
+/* ---- Сделали div grid контейнером для задания gap между p ---- */
+.problem__list {
+  display: grid;
+  gap: var(--section-gap);
+}
+
+.article {
+  display: grid;
+  grid-template-rows: min-content auto;
+  gap: 10px;
+}
+/* ---- Задали цвет и размер тексту дочерним элементам---- */
+.problem__list > .title__head,
+.title__article {
+  background-color: var(--head-text-background-color);
+  font-size: var(--page-font-size);
+  color: var(--color-article);
+}
+/* ---- Задали цвет тени и убрано подчёркивание у ссылок---- */
+.text__p .text__link {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--shadow-text-link-color);
+}
+/* -- Задал жирность шрифта 400 article__header который находится в article и в how-- */
+.decision .article .title__article {
+  font-weight: var(--text-weight);
+}
+/* ---- При фокусе подчёркивания не будет---- */
+.text__p .text__link:focus {
+  outline: none;
+}
+/* ---- При навигации клавишей Tab будет появляться подчёркивание ---- */
+.text__p .text__link:focus-visible {
+  outline: 1px solid var(--hover-color);
+}
+/* ---- Задали подчёркивание при наведении на ссылку---- */
+.text__p .text__link:hover {
+  border-bottom: 1px solid var(--hover-color);
+  outline: none;
+}
+/* ---- Секция 4 - картинки---- */
+.container__img {
+  display: grid;
+  gap: var(--section-padding);
+}
+
+.images {
+  object-position: center;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+/* ---- Footer сайта---- */
+.footer {
+  padding: var(--section-padding);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__title {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+/* ---- @media - запросы ---- */
+@media (width >= 768px) {
+  :root {
+    --main-content-vertical-padding: 60px;
+    --sections-gap: 80px;
+    --section-padding: 20px;
+  }
+  /* ---- Изменил позиционирование заголовка 2 секций ---- */
+  .reason .title__head {
+    width: calc(100% / 3 - var(--section-gap));
+  }
+  /* ---- Изменил позиционирование 1 и 3 секций ---- */
+  .problem,
+  .decision {
+    grid-template-columns: 1fr 2fr;
+  }
+  /* ---- Изменил позиционирование заголовка no focus ---- */
+  .header__title {
+    justify-self: left;
+    margin-inline-start: calc(-1 * var(--section-padding));
+  }
+
+  .focus {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+  
+  .head__p {
+    width: calc(100% / 2);
+  }
+   /* ---- Изменил gap 4 секций ---- */
+  .images .article {
+    gap: 20px;
+  }
+  /* ---- Изменил позиционирование картинок ---- */
+  .images:first-child {
+    grid-column: span 2;
+  }
+  .images:nth-child(2) {
+    grid-row: span 2;
+  }
+  .images:nth-child(3) {
+    grid-row: span 2;
+  }
+  .images:nth-child(5) {
+    grid-column: 2/4;
+    grid-row: 3/3;
+  }
+}
+
+@media (width >= 1024px) {
+   /* ---- Спозиционировал меню по центру сверху ---- */
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+  /* ---- Из колонки сделал строку ---- */
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+  /* ---- Размер 314px первой колонки и 1fr второй колонки ---- */
+  .problem,
+  .decision {
+    grid-template-columns: calc((100% - 2 * var(--main-gap)) / 3) 1fr;
+  }
+  .reason .problem__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

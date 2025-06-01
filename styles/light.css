@@ -9,9 +9,36 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --title-color: #353430;  /* замена на #353430 */
+  --border-hover: #32312d66; /* замена на #32312d66 */
+  --color-article: #353430;  /* замена на #353430 */
+  --page-color: #353430;  /* замена на #353430 */
+  --head-text-background-color: #ff8dcb;  /* замена на #ff8dcb */
+  --header-footer-color: #ffc2e6; /* замена на #ffc2e6 */
+  --shadow-text-link-color: #ff8dcb; /* замена на #ff8dcb */
+  --hover-color: #353430;  /* замена на #353430 */
+  --background-color: #fff1f7;  /* замена на #fff1f7 */
+  --background-image: url("../images/cover-image-light.png");
+  --visible: hidden;
 }
 
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
-  
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Дублируем переменные светлой темы */
+    --title-color: #353430;  /* замена на #353430 */
+    --border-hover: #32312d66; /* замена на #32312d66 */
+    --color-article: #353430;  /* замена на #353430 */
+    --page-color: #353430;  /* замена на #353430 */
+    --head-text-background-color: #ff8dcb;  /* замена на #ff8dcb */
+    --header-footer-color: #ffc2e6; /* замена на #ffc2e6 */
+    --shadow-text-link-color: #ff8dcb; /* замена на #ff8dcb */
+    --hover-color: #353430;  /* замена на #353430 */
+    --background-color: #fff1f7;  /* замена на #fff1f7 */
+    --background-image: url("../images/cover-image-light.png");
+    --visible: hidden;
+  }
 }

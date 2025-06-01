@@ -8,8 +8,8 @@
   font-family: var(--page-font);
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 /* ------------///////-----------ШАПКА_Шаг_3-----------\\\\\\---------- */
 .header {

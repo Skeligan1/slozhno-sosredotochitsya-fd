@@ -120,7 +120,7 @@
 .head__p {
   background-color: var(--head-text-background-color);
   font-weight: var(--header-weight);
-  color: black;
+  color: var(--color-article);
   width: 100%;
   justify-self: end;
   align-self: center;
